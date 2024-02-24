@@ -11,3 +11,6 @@ C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32
 C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-.A82BFA1F.Up2Date
 C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32.exe
 C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32.pdb
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project_dbsys32.Form1.resources
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project_dbsys32.Forms.UserRegistrationForm.resources
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project_dbsys32.Forms.AdminForm.resources

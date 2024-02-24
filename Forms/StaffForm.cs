@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace project_dbsys32
+namespace project_dbsys32.Forms
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class StaffForm : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public StaffForm()
         {
             InitializeComponent();
         }
