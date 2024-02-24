@@ -1,0 +1,13 @@
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\bin\Debug\project-dbsys32.exe.config
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\bin\Debug\project-dbsys32.exe
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\bin\Debug\project-dbsys32.pdb
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\bin\Debug\MetroFramework.Design.dll
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\bin\Debug\MetroFramework.dll
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32.csproj.AssemblyReference.cache
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project_dbsys32.Properties.Resources.resources
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32.csproj.GenerateResource.cache
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32.csproj.CoreCompileInputs.cache
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-.A82BFA1F.Up2Date
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32.exe
+C:\Users\alberinandus\Documents\GitHub\project-dbsys32\obj\Debug\project-dbsys32.pdb
