@@ -13,7 +13,7 @@ CREATE TABLE user_account (
 
 CREATE TABLE user_category(
 	role_id int PRIMARY KEY,
-	[description] varchar(50),
+	[description] varchar(255),
 );
 
 select * from user_account
