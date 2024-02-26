@@ -1,3 +1,5 @@
+CREATE DATABASE dbsys32;
+
 USE dbsys32;
 
 -- tables
