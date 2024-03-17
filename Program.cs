@@ -16,6 +16,7 @@ namespace project_dbsys32
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Forms.ClientForm());
             Application.Run(new Form1());
         }
     }

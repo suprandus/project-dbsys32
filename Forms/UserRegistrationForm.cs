@@ -96,19 +96,12 @@ namespace project_dbsys32.Forms
             return nextUserID;
         }
 
-        private string HashPassword(string password)
+        public static string HashPassword(string password)
         {
-            using (SHA256 sha256 = SHA256.Create())
+            using (var sha256 = SHA256.Create())
             {
                 byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < hashedBytes.Length; i++)
-                {
-                    builder.Append(hashedBytes[i].ToString("x2"));
-                }
-
-                return builder.ToString();
+                return Convert.ToBase64String(hashedBytes);
             }
         }
 
@@ -219,6 +212,17 @@ namespace project_dbsys32.Forms
                         // Form1 login = new Form1();
                         // login.Show();
                         // this.Hide();
+
+                        // Clear fields
+                        txtUserName.Text = "";
+                        txtUserPassword.Text = "";
+                        txtConfirmPassword.Text = "";
+
+                        // Focus
+                        cmbRole.SelectedIndex = -1; 
+
+
+                        txtUserName.Focus();
                     }
                     catch (Exception ex)
                     {

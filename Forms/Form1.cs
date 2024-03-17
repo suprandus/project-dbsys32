@@ -49,21 +49,15 @@ namespace project_dbsys32
         }
 
         // HashPassword
-        private string HashPassword(string password)
+        public static string HashPassword(string password)
         {
-            using (SHA256 sha256 = SHA256.Create())
+            using (var sha256 = SHA256.Create())
             {
                 byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < hashedBytes.Length; i++)
-                {
-                    builder.Append(hashedBytes[i].ToString("x2"));
-                }
-
-                return builder.ToString();
+                return Convert.ToBase64String(hashedBytes);
             }
         }
+
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtUsername.Text))
@@ -83,7 +77,7 @@ namespace project_dbsys32
 
             // Query to retrieve role_id along with the user details
             string sqlQuery = "SELECT role_id FROM user_account WHERE username = @username AND password = @password";
-
+            CurrentUser.Username = username;
             using (SqlConnection connection = new SqlConnection("data source = .\\SQLEXPRESS; database = dbsys32; integrated security = True"))
             {
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
@@ -145,7 +139,9 @@ namespace project_dbsys32
                     }
                 }
             }
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtUsername.Focus();
         }
-
     }
 }
