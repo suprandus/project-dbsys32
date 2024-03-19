@@ -33,13 +33,13 @@
             this.txtDescription = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvSelectedServices = new System.Windows.Forms.DataGridView();
+            this.Services = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnAddService = new MetroFramework.Controls.MetroButton();
             this.btnDeleteService = new MetroFramework.Controls.MetroButton();
             this.btnRefresh = new MetroFramework.Controls.MetroButton();
             this.btnPrintSummary = new MetroFramework.Controls.MetroButton();
-            this.Services = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSubtotal = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -114,6 +114,18 @@
             this.dgvSelectedServices.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvSelectedServices_RowsAdded);
             this.dgvSelectedServices.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvSelectedServices_RowsRemoved);
             // 
+            // Services
+            // 
+            this.Services.HeaderText = "Services";
+            this.Services.Name = "Services";
+            this.Services.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -161,18 +173,7 @@
             this.btnPrintSummary.TabIndex = 9;
             this.btnPrintSummary.Text = "Print Summary";
             this.btnPrintSummary.UseSelectable = true;
-            // 
-            // Services
-            // 
-            this.Services.HeaderText = "Services";
-            this.Services.Name = "Services";
-            this.Services.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
+            this.btnPrintSummary.Click += new System.EventHandler(this.btnPrintSummary_Click);
             // 
             // txtSubtotal
             // 

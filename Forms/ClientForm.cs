@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,25 +30,24 @@ namespace project_dbsys32.Forms
         private void LoadServicesData()
         {
             try
-            { 
+            {
                 string connectionString = "data source = .\\SQLEXPRESS; database = dbsys32; integrated security = True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = "SELECT service_name AS 'Services', price AS 'Price' FROM services";
 
-                    SqlCommand command = new SqlCommand(query, connection);
-
-                    connection.Open();
-
-                    DataTable dataTable = new DataTable();
-
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        adapter.Fill(dataTable);
-                    }
-                    dgvServiceOption.DataSource = dataTable;
+                        connection.Open();
 
-                    connection.Close();
+                        DataTable dataTable = new DataTable();
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(dataTable);
+                        }
+                        dgvServiceOption.DataSource = dataTable;
+                    }
                 }
             }
             catch (Exception ex)
@@ -205,6 +206,100 @@ namespace project_dbsys32.Forms
                     txtChange.Clear();
                 }
             }
+        }
+        
+
+        private PrintDocument printDocument;
+
+        private void btnPrintSummary_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to continue with this transaction?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                ExecuteTransaction();
+            }
+        }
+
+        private void ExecuteTransaction()
+        {
+            try
+            {
+                string currentUser = CurrentUser.Username;
+                string connectionString = "data source = .\\SQLEXPRESS; database = dbsys32; integrated security = True";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string insertQuery = @"
+                INSERT INTO services_transaction (service_id, username, service_name, price)
+                VALUES (@service_id, @username, @service_name, @price);
+            ";
+
+                    foreach (DataGridViewRow row in dgvSelectedServices.Rows)
+                    {
+                        using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@username", currentUser);
+                            command.Parameters.AddWithValue("@service_name", row.Cells[0].Value.ToString());
+                            command.Parameters.AddWithValue("@price", Convert.ToDecimal(row.Cells[1].Value));
+
+                            string serviceIdQuery = "SELECT service_id FROM services WHERE service_name = @service_name;";
+
+                            using (SqlCommand serviceIdCommand = new SqlCommand(serviceIdQuery, connection))
+                            {
+                                serviceIdCommand.Parameters.AddWithValue("@service_name", row.Cells[0].Value.ToString());
+                                object result = serviceIdCommand.ExecuteScalar();
+
+                                if (result != null && result != DBNull.Value)
+                                {
+                                    string serviceId = result.ToString();
+                                    command.Parameters.AddWithValue("@service_id", serviceId);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("No service ID found for service name: " + row.Cells[0].Value.ToString());
+                                    // You may want to handle this case further, such as skipping this row or displaying an error message to the user.
+                                }
+                            }
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                // Preview transaction
+                printDocument = new PrintDocument();
+                printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+                printPreviewDialog.Document = printDocument;
+                printPreviewDialog.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            string summaryText = "Summary:\n\n";
+            summaryText += "Date: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\n\n";
+            summaryText += "Selected Services:\n";
+            foreach (DataGridViewRow row in dgvSelectedServices.Rows)
+            {
+                summaryText += row.Cells[0].Value.ToString() + " - " + row.Cells[1].Value.ToString() + "\n";
+            }
+            summaryText += "\nSubtotal: " + txtSubtotal.Text + "\n";
+            summaryText += "Payment Amount: " + txtPaymentAmount.Text + "\n";
+            summaryText += "Change: " + txtChange.Text + "\n";
+
+            Font font = new Font("Arial", 12);
+            SolidBrush brush = new SolidBrush(Color.Black);
+
+            e.Graphics.DrawString(summaryText, font, brush, new PointF(100, 100));
         }
 
     }

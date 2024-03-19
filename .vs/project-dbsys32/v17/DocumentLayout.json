@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|c:\\users\\alberinandus\\documents\\github\\project-dbsys32\\forms\\clientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|solutionrelative:forms\\clientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|c:\\users\\alberinandus\\documents\\github\\project-dbsys32\\forms\\clientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|solutionrelative:forms\\clientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|c:\\users\\alberinandus\\documents\\github\\project-dbsys32\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\forms\\clientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|solutionrelative:forms\\clientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F1581DA-B16B-4375-A9B4-7B33E8EF5E16}|project-dbsys32.csproj|solutionrelative:forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClientForm.cs",
-              "DocumentMoniker": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\Forms\\ClientForm.cs",
-              "RelativeDocumentMoniker": "Forms\\ClientForm.cs",
-              "ToolTip": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\Forms\\ClientForm.cs",
-              "RelativeToolTip": "Forms\\ClientForm.cs",
-              "ViewState": "AQIAAL8AAAAAAAAAAAAAAM8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T13:04:11.693Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -45,22 +32,33 @@
               "RelativeDocumentMoniker": "Forms\\Form1.cs",
               "ToolTip": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\Forms\\Form1.cs",
               "RelativeToolTip": "Forms\\Form1.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAuwI8AAAAgAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAgwE8AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T12:58:59.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-19T13:41:35.178Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ClientForm.cs",
+              "DocumentMoniker": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\Forms\\ClientForm.cs",
+              "RelativeDocumentMoniker": "Forms\\ClientForm.cs",
+              "ToolTip": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\Forms\\ClientForm.cs",
+              "RelativeToolTip": "Forms\\ClientForm.cs",
+              "ViewState": "AQIAANAAAAAAAAAAAAAUwN0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T13:04:11.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ClientForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\Forms\\ClientForm.cs",
               "RelativeDocumentMoniker": "Forms\\ClientForm.cs",
               "ToolTip": "C:\\Users\\alberinandus\\Documents\\GitHub\\project-dbsys32\\Forms\\ClientForm.cs [Design]",
               "RelativeToolTip": "Forms\\ClientForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T12:54:00.574Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-03-17T12:54:00.574Z"
             }
           ]
         }
